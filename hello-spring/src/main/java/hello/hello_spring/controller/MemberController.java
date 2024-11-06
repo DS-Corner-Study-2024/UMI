@@ -1,10 +1,10 @@
 package hello.hello_spring.controller;
 
-import org.springframework.ui.Model;
 import hello.hello_spring.domain.Member;
 import hello.hello_spring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -18,6 +18,7 @@ public class MemberController {
     @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        System.out.println("memberService = " + memberService.getClass());
     }
 
     @GetMapping("/members/new")
