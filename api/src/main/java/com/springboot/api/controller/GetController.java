@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -58,4 +59,14 @@ public class GetController {
 
         return sb.toString();
     }
+
+    // 스터디 문제 1
+    @GetMapping(value = "/request")
+    public String getRequestParam(
+            @RequestParam String name,
+            @RequestParam String email,
+            @RequestParam String organization) {
+        return name + " " + email + " " + organization;
+    }
+
 }

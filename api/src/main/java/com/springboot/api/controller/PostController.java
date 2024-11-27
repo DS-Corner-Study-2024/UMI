@@ -18,7 +18,7 @@ public class PostController {
         return "Hello Post API";
     }
 
-    @PostMapping(value = "/member")
+    @PostMapping(value = "/member1")
     public String postMember(@RequestBody Map<String, Object> postData) {
         StringBuilder sb = new StringBuilder();
 
@@ -32,6 +32,12 @@ public class PostController {
     @PostMapping(value = "/member2")
     public String postMemberDto(@RequestBody MemberDto memberDTO) {
         return memberDTO.toString();
+    }
+
+    // 스터디 문제 2
+    @PostMapping(value = "/member")
+    public String postMemberDto2(@RequestBody MemberDto memberDTO) {
+        return "전달받은 데이터 : " + memberDTO.toString();
     }
 
 }
